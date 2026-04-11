@@ -36,4 +36,39 @@ Real estate investors lack data-driven tools to evaluate short-term rental inves
 | **Seasonality** | December-January peak = 30% revenue increase | Target holiday season for maximum returns |
 | **Investment Score** | Top 15% of properties = "Strong Buy" | Filter to high-potential investments |
 
-## 🏗️ Architecture Overview
+
+## 💻 Quick Start
+
+### Prerequisites
+- Python 3.11+
+- PostgreSQL 15+
+- Power BI Desktop (optional, for editing)
+- Docker (optional)
+
+### Local Setup
+
+```bash
+# 1. Clone repository
+git clone https://github.com/MASELAM1/airbnb-investment-platform.git
+cd airbnb-investment-platform
+
+# 2. Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r etl/requirements.txt
+pip install -r api/requirements.txt
+
+# 4. Set up PostgreSQL
+createdb -U postgres airbnb_investment
+
+# 5. Run ETL pipeline
+python etl/extract.py
+
+# 6. Start API server
+cd api
+python main.py
+
+# 7. Open Power BI dashboard
+# Open powerbi/airbnb_dashboard.pbix
