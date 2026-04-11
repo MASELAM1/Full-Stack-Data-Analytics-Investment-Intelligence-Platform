@@ -4,10 +4,10 @@ test_db.py - Test PostgreSQL connection
 from sqlalchemy import create_engine, text
 
 # Your connection string
-DATABASE_URL = 'postgresql://postgres:Dts%40315@localhost:5432/airbnb_investment'
+DATABASE_URL = 'postgresql://user:yourpassword@localhost:****/airbnb_investment'
 
 print("Testing PostgreSQL connection...")
-print(f"Connection string: postgresql://postgres:****@localhost:5432/airbnb_investment")
+print(f"Connection string: postgresql://user:****@localhost:****/airbnb_investment")
 
 try:
     engine = create_engine(DATABASE_URL)
@@ -29,4 +29,4 @@ except Exception as e:
     print("  - PostgreSQL not running")
     print("  - Wrong password")
     print("  - Database doesn't exist")
-    print("  - Port 5432 is blocked")
+    print("  - Port **** is blocked")
