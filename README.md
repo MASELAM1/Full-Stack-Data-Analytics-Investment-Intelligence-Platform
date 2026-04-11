@@ -9,7 +9,7 @@
 
 > **End-to-end analytics platform for short-term rental investment intelligence**
 
-## 📊 Live Demo Links Not yet Available
+## 📊 Live Demo: Only Power BI Dashboard Link available, other Links Not yet Available
 
 | Component | Link | Status |
 |-----------|------|--------|
