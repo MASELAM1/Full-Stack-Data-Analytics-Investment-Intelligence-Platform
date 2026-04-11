@@ -38,7 +38,7 @@ def clean_listings(df):
         df = df[df['price'] <= cap]
         print(f"  Removed {before_cap - len(df)} price outliers (>R{cap:,.0f})")
     
-    # Handle missing values - FIXED TYPO HERE
+    # Handle missing values 
     if 'review_scores_rating' in df.columns:
         missing_count = df['review_scores_rating'].isna().sum()
         df['review_scores_rating'].fillna(0, inplace=True)
@@ -303,14 +303,14 @@ print("\n Full summary saved to etl_summary.txt")
 
 """"
 #Databse Connection
-engine = create_engine('postgresql://postgres:Dts%40315@localhost:5432/airbnb_investment')
+engine = create_engine('postgresql://user:yourpassword@localhost:****/airbnb_investment')
 
 #Load staging tables
 listings_clean.to_sql('stg_listings', engine, if_exists='replace', index=False)
 calendar_clean.to_sql('stg_calendar', engine, if_exists='replace', index=False)
 reviews_clean.to_sql('stg_reviews', engine, if_exists='replace', index=False)
 """
-DATABASE_URL = 'postgresql://postgres:Dts%40315@localhost:5432/airbnb_investment'
+DATABASE_URL = 'postgresql://user:yourpassword@localhost:****/airbnb_investment'
 
 print("Connection to PostgreSQL...")
 engine = create_engine(DATABASE_URL)
