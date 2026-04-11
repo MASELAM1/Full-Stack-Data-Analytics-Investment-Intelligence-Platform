@@ -13,7 +13,7 @@
 
 | Component | Link | Status |
 |-----------|------|--------|
-| **Power BI Dashboard** | [View Dashboard](https://app.powerbi.com/https://app.powerbi.com/links/_XGj54-vOe?ctid=b14d86f1-83ba-4b13-a702-b5c0231b9337&pbi_source=linkShare) | 🟢 Live |
+| **Power BI Dashboard** | [View Dashboard](https://app.powerbi.com/links/_XGj54-vOe?ctid=b14d86f1-83ba-4b13-a702-b5c0231b9337&pbi_source=linkShare) | 🟢 Live |
 | **API Documentation** | [Swagger UI](https://your-api.onrender.com/docs) | 🟢 Live |
 | **Interactive Demo** | [Watch Video](https://youtu.be/your-link) | 🟢 Available |
 
