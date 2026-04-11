@@ -66,6 +66,22 @@ createdb -U postgres airbnb_investment
 # 5. Run ETL pipeline
 python etl/extract.py
 
+
+
+## 🛠️ Technology Stack
+
+| Layer | Technologies |
+|-------|--------------|
+| **Data Extraction** | Python, Pandas, NumPy, Requests |
+| **Data Warehouse** | PostgreSQL (Star Schema, Materialized Views, Indexing) |
+| **Backend API** | FastAPI, SQLAlchemy, Pydantic, Uvicorn |
+| **Business Intelligence** | Power BI, DAX, Power Query |
+| **DevOps** | Docker, Docker Compose, Git |
+| **Cloud (Optional)** | AWS ECS, RDS, S3 |
+
+## 📊 Database Schema (Star Schema)
+
+
 # 6. Start API server
 cd api
 python main.py
