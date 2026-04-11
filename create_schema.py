@@ -6,7 +6,7 @@ from sqlalchemy import create_engine, text
 import pandas as pd
 
 # Database connection
-DATABASE_URL = 'postgresql://postgres:Dts%40315@localhost:5432/airbnb_investment'
+DATABASE_URL = 'postgresql://user:yourpassword@localhost:****/airbnb_investment'
 engine = create_engine(DATABASE_URL)
 
 print("=" * 70)
