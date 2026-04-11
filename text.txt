@@ -1,0 +1,19 @@
+┌─────────────────────────────────────────────────────────────────────┐
+│                         DATA PIPELINE                                │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  [Source]         [Extract]        [Load]        [Transform]        │
+│  Inside Airbnb  →  Python Script →  PostgreSQL  →  dbt/SQL Views    │
+│  (CSV/API)        (Pandas/API)                    (Aggregations)     │
+│                                                                      │
+│         ↓                                      ↓                     │
+│  [Backend API]                           [Analytics DB]             │
+│  ASP.NET Core                             (Star Schema)             │
+│  (REST Endpoints)                                                    │
+│         ↓                                      ↓                     │
+│  [Frontend]                              [BI Layer]                 │
+│  Power BI Report                         Power BI Dashboard         │
+│  + Optional:                             + Scheduled Refresh         │
+│  React/HTML Dashboard                                              │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
