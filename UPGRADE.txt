@@ -1,0 +1,52 @@
+PROJECT UPGRADE GUIDE
+
+1. Back up the project
+   - Commit and push all source changes.
+   - Export the PostgreSQL database:
+     pg_dump -U postgres airbnb_investment > airbnb_investment_backup.sql
+   - Back up Power BI files and dashboard configuration.
+
+2. Upgrade the environment
+   - Use a supported Python 3.11 or newer version.
+   - Create a fresh virtual environment.
+   - Upgrade PostgreSQL and extensions according to the deployment environment.
+   - Update Docker and Docker Compose if containers are used.
+
+3. Update dependencies
+   - Review and pin package versions in each requirements file.
+   - Upgrade dependencies in small groups.
+   - Install and regenerate the virtual environment:
+     python -m venv venv
+     source venv/bin/activate
+     pip install --upgrade pip
+     pip install -r requirements.txt
+
+4. Review database changes
+   - Run create_schema.py only after staging tables are loaded.
+   - Test all schema additions and migrations against the database backup.
+   - Confirm that star schema tables, materialized views, indexes, and primary
+     and foreign keys are recreated correctly.
+
+5. Update the ETL and API
+   - Run the extraction scripts and inspect source data changes.
+   - Validate Pandas transformations and investment score calculations.
+   - Update SQLAlchemy models and FastAPI endpoints for new library versions.
+   - Update API request and response schemas if data fields changed.
+
+6. Update the dashboard
+   - Open the Power BI report in the latest supported Power BI Desktop release.
+   - Refresh source credentials and the PostgreSQL connection.
+   - Check DAX measures, relationships, refresh settings, and visual layouts.
+
+7. Test the upgraded project
+   - Run available unit and integration tests.
+   - Re-run the ETL pipeline on a test database.
+   - Verify key totals, neighborhood revenue, occupancy, and investment grades.
+   - Start the API and test Swagger UI and representative endpoints.
+   - Compare the upgraded dashboard with the previous dashboard output.
+
+8. Deploy and monitor
+   - Deploy database changes before the new application version.
+   - Update environment variables and secrets outside source control.
+   - Monitor ETL jobs, API logs, database performance, and Power BI refreshes.
+   - Roll back to the backup if validation fails.
